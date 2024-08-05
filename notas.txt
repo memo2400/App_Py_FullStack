@@ -1,0 +1,7 @@
+
+
+creo entorno 
+python -m venv entvirs
+
+ejecuto
+entvir\Scripts\activate
