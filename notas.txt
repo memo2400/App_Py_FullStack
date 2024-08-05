@@ -23,3 +23,22 @@ para los requeriomientos usamos
 pip install -r requirements.txt
 
 
+vuelvo a dar en comando
+reflex run
+
+checaremos  el puerto local para ver la app
+    App running at: http://localhost:3000
+    Backend running at: http://0.0.0.0:8000
+
+La app guarda si dejaste el dark o light node activado
+
+si hago un cambio este se ejecuta y compila en vivo
+
+// 19:03
+
+//20:11
+
+
+// 24 :14
+
+
