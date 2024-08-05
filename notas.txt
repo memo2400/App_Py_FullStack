@@ -1,7 +1,25 @@
 
+carpeta a usar 
+C:\Users\Tecnomotum\3D Objects\Pyhton\Sitio_full_py
+
 
 creo entorno 
 python -m venv entvirs
 
 ejecuto
 entvir\Scripts\activate
+
+instalo refelx
+pip install reflex
+
+
+reflex init
+
+
+elegimos 0
+
+
+para los requeriomientos usamos 
+pip install -r requirements.txt
+
+
