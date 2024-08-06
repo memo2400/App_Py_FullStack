@@ -7,15 +7,25 @@ from rxconfig import config
 
 class State(rx.State):
     """The app state."""
-    label = "Etiqueta de pruebas, "
-    original_label = "Etiqueta de pruebas, "
+    label = "Bienvenido a Reflex "
 
-    def cambiar_etiqueta(self):
-        if self.label == "Etiqueta Modificada ":
-            self.label = self.original_label
+    def handle_title_input_change(self, val):
+        self.label = val
+    
+    def did_clic(self):
+        # esta impresion se haria en consola y no se muestra en el front
+        print ("hello worl")
 
-        else:
-            self.label = "Etiqueta Modificada "
+
+    # Banco de pruebas
+    # original_label = "Etiqueta de pruebas, "
+
+    # def cambiar_etiqueta(self):
+    #     if self.label == "Etiqueta Modificada ":
+    #         self.label = self.original_label
+
+    #     else:
+    #         self.label = "Etiqueta Modificada "
 
     
 
@@ -25,7 +35,7 @@ def index() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-left"),
         rx.vstack(
-            rx.heading(State.label, "Hola mundo (app creada con reflex)!", size="9"),
+            rx.heading(State.label, size="9"),
             rx.text(
                 "Usted puede iniciar por editar: ",
                 rx.code(f"{config.app_name}/{config.app_name}.py"),
@@ -33,9 +43,19 @@ def index() -> rx.Component:
             ),
 
             # On clik es un evento, s eme habia olvidado la coma despues de parentesis
-            rx.button("hacer algo", on_click=State.cambiar_etiqueta),
+            # rx.button("hacer algo", on_click=State.cambiar_etiqueta),
 
             # Esto es algo dinamico
+
+
+
+            rx.input(
+                # guardamos el texto escrito en el texbox, y no se borra aunque recargues
+                default_value=State.label,
+                on_click=State.did_clic(),
+                on_change= State.handle_title_input_change),
+
+
             rx.link(
                 rx.button("Para mayor informacion puede ir a: "),
                 href="https://reflex.dev/docs/getting-started/introduction/",
