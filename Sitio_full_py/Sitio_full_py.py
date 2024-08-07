@@ -16,6 +16,20 @@ class State(rx.State):
         # esta impresion se haria en consola y no se muestra en el front
         print ("hello worl")
 
+# cada argumento corresponde a un rx.**
+#def base_page(a, b, c) -> rx.Component:
+
+# aqui los argumentos se catalogan en dos, argumento y KeyArgumentos
+def base_page(*args, **kwargs ) -> rx.Component:
+
+    # impirmo en cosola los tres argumentos que recibi de index ()
+    print([type(x) for x in args])
+
+
+    # debo abrir el parentesis arriba para evitar errores
+    return rx.container(
+        *args
+    )
 
     # Banco de pruebas
     # original_label = "Etiqueta de pruebas, "
@@ -31,8 +45,8 @@ class State(rx.State):
 
 # este es el fron end de nuestra app
 def index() -> rx.Component:
-    # Welcome Page (Index)    
-    return rx.container(
+    # Welcome Page (Index) , return our base_page   
+    return base_page(
         rx.color_mode.button(position="top-left"),
         rx.vstack(
             rx.heading(State.label, size="9"),
