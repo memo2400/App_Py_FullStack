@@ -20,6 +20,7 @@ class State(rx.State):
 #def base_page(a, b, c) -> rx.Component:
 
 # aqui los argumentos se catalogan en dos, argumento y KeyArgumentos
+# sin importar cuantos tengamos se cargan en automatico
 def base_page(*args, **kwargs ) -> rx.Component:
 
     # impirmo en cosola los tres argumentos que recibi de index ()
@@ -28,7 +29,10 @@ def base_page(*args, **kwargs ) -> rx.Component:
 
     # debo abrir el parentesis arriba para evitar errores
     return rx.container(
-        *args
+        # con pasar los argumentos ya se despliega la pagina
+        *args,
+        rx.color_mode.button(position="top-left"),
+        rx.logo()
     )
 
     # Banco de pruebas
@@ -47,7 +51,7 @@ def base_page(*args, **kwargs ) -> rx.Component:
 def index() -> rx.Component:
     # Welcome Page (Index) , return our base_page   
     return base_page(
-        rx.color_mode.button(position="top-left"),
+        
         rx.vstack(
             rx.heading(State.label, size="9"),
             rx.text(
@@ -78,8 +82,8 @@ def index() -> rx.Component:
             spacing="5",
             justify="center",
             min_height="85vh",
-        ),
-        rx.logo(),
+        )
+        
     )
 
 

@@ -46,3 +46,6 @@ si hago un cambio este se ejecuta y compila en vivo
 
 con reflex podemos hacer todo ello del manejo de la pagina
 sin necesidad d eusar Js, y demas cosas
+
+
+36:00
