@@ -19,8 +19,6 @@ class State(rx.State):
 def navigator_bar() -> rx.Component:
     return rx.heading("Saas App", size="9")
 
-
-
 # cada argumento corresponde a un rx.**
 #def base_page(a, b, c) -> rx.Component:
 
@@ -28,6 +26,9 @@ def navigator_bar() -> rx.Component:
 # sin importar cuantos tengamos se cargan en automatico
 # Child RX component se puede reemplazar por cualquier otro componente rx.***
 def base_page(child: rx.Component, *args, **kwargs ) -> rx.Component:
+    # si no es un compponent manda mensaje, se probo con "hola" como parametro
+    if not isinstance(child, rx. Component):
+        child = rx.heading("This is not a valid Child element here")
 
     # impirmo en cosola los tres argumentos que recibi de index ()
     print([type(x) for x in args])
@@ -61,6 +62,7 @@ def base_page(child: rx.Component, *args, **kwargs ) -> rx.Component:
 # este es el fron end de nuestra app
 def index() -> rx.Component:
     # Welcome Page (Index) , return our base_page   
+    return base_page("Hola")
     return base_page(
         
         rx.vstack(
