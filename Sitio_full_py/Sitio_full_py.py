@@ -16,12 +16,18 @@ class State(rx.State):
         # esta impresion se haria en consola y no se muestra en el front
         print ("hello worl")
 
+def navigator_bar() -> rx.Component:
+    return rx.heading("Saas App", size="9")
+
+
+
 # cada argumento corresponde a un rx.**
 #def base_page(a, b, c) -> rx.Component:
 
 # aqui los argumentos se catalogan en dos, argumento y KeyArgumentos
 # sin importar cuantos tengamos se cargan en automatico
-def base_page(*args, **kwargs ) -> rx.Component:
+# Child RX component se puede reemplazar por cualquier otro componente rx.***
+def base_page(child: rx.Component, *args, **kwargs ) -> rx.Component:
 
     # impirmo en cosola los tres argumentos que recibi de index ()
     print([type(x) for x in args])
@@ -30,7 +36,12 @@ def base_page(*args, **kwargs ) -> rx.Component:
     # debo abrir el parentesis arriba para evitar errores
     return rx.container(
         # con pasar los argumentos ya se despliega la pagina
-        *args,
+        #*args,
+
+        # otra forma de en lugar de args es agregar child: rx.Component en los parametros y:
+        navigator_bar(),
+        child,
+
         rx.color_mode.button(position="top-left"),
         rx.logo()
     )
