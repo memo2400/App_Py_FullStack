@@ -63,3 +63,15 @@ Tuve que reinstalar la mismoa version de pythinb osea la 3.12.5
 borrar del path la verison vieja y agregar la v nueva, 
 y darle al pip install -r requirements.txt
 
+
+39:41
+
+vamos a https://reflex.dev/docs/recipes/layout/navbar/
+para decaragar una pnatilla de barra de navegacion
+usaremos la de butonns
+
+
+guardamos el logo en la parte de assets
+
+42:58
+
