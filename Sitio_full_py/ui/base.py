@@ -1,3 +1,4 @@
+from os import name
 import reflex as rx
 
 # importamos la barra d enavegacion de nav.py
@@ -31,7 +32,8 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         navigator_bar(),
         child,
 
-        rx.color_mode.button(position="top-left"),
-        rx.logo()
+        rx.color_mode.button(position="top-left", id= "my_light_mode_brn"),
+        rx.logo(),
+        name = "my_base_container"
     )
 

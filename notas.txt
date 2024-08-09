@@ -78,3 +78,7 @@ guardamos el logo en la parte de assets
 43:52
 Code managtment
 
+48:30
+se asignan los nombres al los componentes del container
+
+

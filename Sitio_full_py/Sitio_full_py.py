@@ -7,7 +7,9 @@ from sqlalchemy import true
 
 from rxconfig import config
 
-from ui.base import base_page
+# Se necesita poner el punto antes de "ui", para que no falle
+from .ui.base import base_page
+
 
 
 class State(rx.State):
