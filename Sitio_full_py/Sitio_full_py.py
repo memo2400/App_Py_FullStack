@@ -1,6 +1,8 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 
+from tkinter.tix import Tree
 import reflex as rx
+from sqlalchemy import true
 
 from rxconfig import config
 
@@ -25,10 +27,13 @@ def navigator_bar() -> rx.Component:
 # aqui los argumentos se catalogan en dos, argumento y KeyArgumentos
 # sin importar cuantos tengamos se cargan en automatico
 # Child RX component se puede reemplazar por cualquier otro componente rx.***
-def base_page(child: rx.Component, *args, **kwargs ) -> rx.Component:
-    # si no es un compponent manda mensaje, se probo con "hola" como parametro
+def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Component:
+    # si no es un compponent manda mensaje, se probo con "hola" como parametro, puedo hacer condiciones d ecualquier argumento
     if not isinstance(child, rx. Component):
         child = rx.heading("This is not a valid Child element here")
+    
+    if hide_navbar:        
+        print("navbar is true")
 
     # impirmo en cosola los tres argumentos que recibi de index ()
     print([type(x) for x in args])
@@ -62,7 +67,7 @@ def base_page(child: rx.Component, *args, **kwargs ) -> rx.Component:
 # este es el fron end de nuestra app
 def index() -> rx.Component:
     # Welcome Page (Index) , return our base_page   
-    return base_page("Hola")
+    # return base_page("Hola")
     return base_page(
         
         rx.vstack(
@@ -95,7 +100,8 @@ def index() -> rx.Component:
             spacing="5",
             justify="center",
             min_height="85vh",
-        )
+        ),
+        hide_navbar=True
         
     )
 
