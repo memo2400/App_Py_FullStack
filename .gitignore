@@ -1,6 +1,6 @@
+# deberia agregar lo del entorno virtual
 *.db
 *.py[cod]
 .web
 __pycache__/
 assets/external/
-# deberia agregar lo del entorno virtual
