@@ -82,3 +82,13 @@ Code managtment
 se asignan los nombres al los componentes del container
 
 
+Ve en inmmspeccionar
+en elements veo los heds de base.py 
+    y en styles veo el paddin, puedo activarlo y desactivarlo en el check box
+
+
+nota nmunca debemos confundir el id con el name de los elementos
+
+cada elemento etiquetado como nav bar esta uno dentro de otro parecido a html
+
+51:43

@@ -14,7 +14,7 @@ from .ui.base import base_page
 
 class State(rx.State):
     """The app state."""
-    label = "Bienvenido a Reflex "
+    label = "hola Gordooo!! "
 
     def handle_title_input_change(self, val):
         self.label = val

@@ -30,6 +30,8 @@ def navigator_bar() -> rx.Component:
                     navbar_link("About", "/#"),
                     navbar_link("Pricing", "/#"),
                     navbar_link("Contact", "/#"),
+                    navbar_link("Mis Dispositivos", "/#"),
+                    navbar_link("Suscripciones", "/Subs"),
                     spacing="5",
                 ),
                 rx.hstack(
@@ -44,6 +46,7 @@ def navigator_bar() -> rx.Component:
                 ),
                 justify="between",
                 align_items="center",
+                id="my_nav_var_hstack_desktop"
             ),
         ),
         # estos son para cuando se ajusta exactamente al tamaño
@@ -91,6 +94,7 @@ def navigator_bar() -> rx.Component:
         # top="0px",
         # z_index="5",
         width="100%",
+        id = "my_main_nav"
     )
 
 
