@@ -23,16 +23,31 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
 
 
     # debo abrir el parentesis arriba para evitar errores
-    return rx.container(
+
+    # Si colocomeo  # comentario despues de abrir parentesis se omite este return
+    # Usar fragment en lugar de container, acomoda mejor la nav bar, pero el contenido se 
+    # queda mal colocado
+    # return rx.conteiner( 
+    return rx.fragment( 
         # con pasar los argumentos ya se despliega la pagina
         #*args,
 
         # otra forma de en lugar de args es agregar child: rx.Component en los parametros y:
         # invocamos el nuevo codigo
         navigator_bar(),
+        
+        rx.box(
         child,
+        id="my_content_element_area",
+        # Aqui estan las propiedades de el contenido de la pagina
+        
+        # era un color cian, borre
+        # bg=rx.color("accent", 3),
+        padding="1em",       
+        width="100%",
+        ),
 
-        rx.color_mode.button(position="top-left", id= "my_light_mode_brn"),
+        rx.color_mode.button(position="top-left"),
         rx.logo(),
         
         # Baja el combo donde incia la pagina
