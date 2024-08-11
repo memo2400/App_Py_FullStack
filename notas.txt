@@ -92,3 +92,7 @@ nota nmunca debemos confundir el id con el name de los elementos
 cada elemento etiquetado como nav bar esta uno dentro de otro parecido a html
 
 51:43
+
+podemos buscar el justificar de acuerdo a lo que dice la documentacion en reflex
+
+52:41
