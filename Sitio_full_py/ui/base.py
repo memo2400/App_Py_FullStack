@@ -27,7 +27,8 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
     # Si colocomeo  # comentario despues de abrir parentesis se omite este return
     # Usar fragment en lugar de container, acomoda mejor la nav bar, pero el contenido se 
     # queda mal colocado
-    # return rx.conteiner( 
+    # return rx.container( 
+    # https://reflex.dev/docs/library/layout/fragment/#fragment
     return rx.fragment( 
         # con pasar los argumentos ya se despliega la pagina
         #*args,
@@ -36,15 +37,17 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         # invocamos el nuevo codigo
         navigator_bar(),
         
+        # El error era que no estaba identado lo del parentesis
         rx.box(
-        child,
-        id="my_content_element_area",
-        # Aqui estan las propiedades de el contenido de la pagina
+            child,
+            # Aqui estan las propiedades de el contenido de la pagina
         
-        # era un color cian, borre
-        # bg=rx.color("accent", 3),
-        padding="1em",       
-        width="100%",
+            # era un color cian, borre
+            # bg=rx.color("accent", 3),
+            padding="1em",       
+            width="100%",
+            # text_align="center", 
+            id="my_content_element_area"
         ),
 
         rx.color_mode.button(position="top-left"),
@@ -53,6 +56,10 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         # Baja el combo donde incia la pagina
         # padding="10em",
         
-        id = "my_base_container" # habia usado name en lugar de id
+        id = "my_base_container", # habia usado name en lugar de id
+        # text_align="center" # no funciono
     )
+
+    # Pruebas
+    # return rx.fragment(rx.text("Component1"), rx.text("Component2"))
 

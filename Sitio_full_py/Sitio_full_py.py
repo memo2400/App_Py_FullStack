@@ -23,6 +23,8 @@ class State(rx.State):
         # esta impresion se haria en consola y no se muestra en el front
         print ("hello worl")
 
+    
+
 
 
     
@@ -31,9 +33,13 @@ class State(rx.State):
 def index() -> rx.Component:
     # Welcome Page (Index) , return our base_page   
     # return base_page("Hola")
-    return base_page(
-        
-        rx.vstack(
+
+    # El contenido de base_page se movio aqui
+    # para poder centrar el cuerpo de la pagina ,se uso fragment y luego Stack
+    # my_child = rx.fragment(
+
+    # Documentacion aqui https://reflex.dev/docs/library/layout/stack/#vstack
+    my_child = rx.vstack(
             rx.heading(State.label, size="9"),
             rx.text(
                 "Usted puede iniciar por editar: ",
@@ -62,10 +68,14 @@ def index() -> rx.Component:
             ),
             spacing="5",
             justify="center",
+            align="centar",
+            text_align="center",
             min_height="85vh",
-        )        
-        
-    )
+            id="my_child"
+        )
+
+    # Base page gets my_child
+    return base_page(my_child)
 
 
 app = rx.App()
