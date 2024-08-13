@@ -53,6 +53,7 @@ def index() -> rx.Component:
                 size="4",
             ),
 
+            rx.link("Valla a la pagina acerca de", href="/aboutus"),
             # On clik es un evento, s eme habia olvidado la coma despues de parentesis
             # rx.button("hacer algo", on_click=State.cambiar_etiqueta),
 

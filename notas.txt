@@ -124,3 +124,18 @@ https://reflex.dev/docs/library/forms/input/
 
 pagina de iconos
     https://icon-icons.com/search/icons/?filtro=chip&sort=popular
+
+
+01:08:05 
+
+ FIN SE SECCION
+
+
+para el menu de mobile, debemos de agregar la navegacion de las barras
+conesta documentacion
+https://reflex.dev/docs/library/overlay/dropdownmenu/
+
+como no hya froma directa de agregar los links en el menu de mobile, se hara de otro modo
+01:11:54
+
+01:13:51 fin
