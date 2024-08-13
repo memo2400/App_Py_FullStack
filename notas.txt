@@ -119,3 +119,8 @@ https://reflex.dev/docs/library/forms/input/
  nuevas paginas y navegacion
 
 01:04:39s
+
+01:05:17
+
+pagina de iconos
+    https://icon-icons.com/search/icons/?filtro=chip&sort=popular

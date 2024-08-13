@@ -15,13 +15,13 @@ def navigator_bar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        src="/chiplinear_106231.png",
                         width="2.25em",
                         height="auto",
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "Reflex", size="7", weight="bold"
+                        "Tower", size="7", weight="bold"
                     ),
                     align_items="center",
                 ),
@@ -57,13 +57,13 @@ def navigator_bar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        src="/chiplinear_106231.png",
                         width="2em",
                         height="auto",
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "Reflex", size="6", weight="bold"
+                        "Tower", size="6", weight="bold"
                     ),
                     align_items="center",
                 ),

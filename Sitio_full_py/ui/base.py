@@ -11,6 +11,7 @@ from .nav import navigator_bar
 # sin importar cuantos tengamos se cargan en automatico
 # Child RX component se puede reemplazar por cualquier otro componente rx.***
 def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Component:
+    
     # si no es un compponent manda mensaje, se probo con "hola" como parametro, puedo hacer condiciones d ecualquier argumento
     if not isinstance(child, rx. Component):
         child = rx.heading("This is not a valid Child element here")
@@ -38,6 +39,7 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         navigator_bar(),
         
         # El error era que no estaba identado lo del parentesis
+        # es la caja donde coloco todo el cuerpo de la pagina, Sin Header ni Footer
         rx.box(
             child,
             # Aqui estan las propiedades de el contenido de la pagina
@@ -47,10 +49,10 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
             padding="1em",       
             width="100%",
             # text_align="center", 
-            id="my_content_element_area"
+            id="my_content_ele_area"
         ),
 
-        rx.color_mode.button(position="top-left"),
+        rx.color_mode.button(position="button-left"),
         rx.logo(),
         
         # Baja el combo donde incia la pagina
@@ -60,6 +62,5 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         # text_align="center" # no funciono
     )
 
-    # Pruebas
-    # return rx.fragment(rx.text("Component1"), rx.text("Component2"))
+
 
