@@ -67,8 +67,8 @@ def index() -> rx.Component:
                 is_external=True,
             ),
             spacing="5",
-            justify="center",
-            align="centar",
+            justify="center", # tenia centar en lugar de center
+            align="center", # podemos usar end, strech et etc
             text_align="center",
             min_height="85vh",
             id="my_child"

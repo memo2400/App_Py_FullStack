@@ -105,3 +105,15 @@ se revisa como alinear el cuepro de la pagina
 01:00:04
 
 01:01:20
+
+docuemntacion de vSatack
+    https://reflex.dev/docs/library/layout/stack/#vstack
+
+mas documentacion here https://reflex.dev/docs/library/
+
+
+https://reflex.dev/docs/library/forms/input/
+
+01:04:15
+
+ nuevas paginas y navegacion
