@@ -154,5 +154,6 @@ agregamos forma pro de usar la navegacion
 01:21:44
  fin de seccion
 
+vamos ahora acrear una State class que sera solo para navegar
 
 
