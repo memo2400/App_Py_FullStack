@@ -140,5 +140,11 @@ como no hya froma directa de agregar los links en el menu de mobile, se hara de 
 
 01:13:51 fin
 
+IMPORTANTE
+Ctrl + C = con eso detenemos el servioc de reflex run
+
+cls = Limpiar consola de windows
 
 01:17:24 fin de seccion
+
+agregamos forma pro de usar la navegacion

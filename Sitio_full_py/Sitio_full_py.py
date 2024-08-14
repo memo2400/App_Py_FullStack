@@ -14,8 +14,8 @@ from .ui.base import base_page
 # Ya no sera necesario debido a la importacion de toda la carpeta
 # from .pages.about import about_page
 
-# importo la carperta entera y dejo de usar la linea de arriba
-from . import pages
+# importo las carpertas entera y dejo de usar la linea de arriba
+from . import pages, navigation
 
 
 
@@ -29,7 +29,7 @@ class State(rx.State):
     def did_clic(self):
         # esta impresion se haria en consola y no se muestra en el front
         print ("You did a clic")
-        return rx.redirect('/about_us')
+        return rx.redirect(navigation.routes.ABOUT_US_ROUTE)
 
     
 
@@ -61,7 +61,7 @@ def index() -> rx.Component:
             # rx.button("about us", on_click=rx.redirect('/about_us/')),
 
             # es mejor tener el boton dentro de un link, eso nos permite copiar el link dando clic derecho al boton
-            rx.link(rx.button("About us", href='/about_us')),
+            rx.link(rx.button("About us", href=navigation.routes.ABOUT_US_ROUTE)),
 
 
 
@@ -98,5 +98,12 @@ app = rx.App()
 app.add_page(index)
 
 # Agregamos nuestra pagina nueva (*** /ruta) , si tenemos los funciones del mismo nombre puede generar confilcto
-app.add_page(pages.about_page, route='/about_us')
-app.add_page(pages.pricing_page, route='/pricing')
+# app.add_page(pages.about_page, route='/about_us')
+# app.add_page(pages.pricing_page, route='/pricing')
+
+
+# Nueva forma de navegar para evitar errores
+app.add_page(pages.about_page, route=navigation.routes.ABOUT_US_ROUTE)
+app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)
+
+
