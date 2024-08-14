@@ -2,6 +2,7 @@
 
 from tkinter.tix import Tree
 from turtle import position
+import click
 import reflex as rx
 from sqlalchemy import true
 
@@ -27,7 +28,8 @@ class State(rx.State):
     
     def did_clic(self):
         # esta impresion se haria en consola y no se muestra en el front
-        print ("hello worl")
+        print ("You did a clic")
+        return rx.redirect('/about_us')
 
     
 
@@ -52,12 +54,17 @@ def index() -> rx.Component:
                 rx.code(f"{config.app_name}/{config.app_name}.py"),
                 size="4",
             ),
+            
+            # Nuevo codigo para menus
 
-            rx.link("Valla a la pagina acerca de", href="/aboutus"),
-            # On clik es un evento, s eme habia olvidado la coma despues de parentesis
-            # rx.button("hacer algo", on_click=State.cambiar_etiqueta),
+            # no se recomienda hace uso del boton
+            # rx.button("about us", on_click=rx.redirect('/about_us/')),
 
-            # Esto es algo dinamico
+            # es mejor tener el boton dentro de un link, eso nos permite copiar el link dando clic derecho al boton
+            rx.link(rx.button("About us", href='/about_us')),
+
+
+
 
 
 
@@ -73,6 +80,7 @@ def index() -> rx.Component:
                 href="https://reflex.dev/docs/getting-started/introduction/",
                 is_external=True,
             ),
+
             spacing="5",
             justify="center", # tenia centar en lugar de center
             align="center", # podemos usar end, strech et etc
@@ -90,5 +98,5 @@ app = rx.App()
 app.add_page(index)
 
 # Agregamos nuestra pagina nueva (*** /ruta) , si tenemos los funciones del mismo nombre puede generar confilcto
-app.add_page(pages.about_page, route='/aboutus')
+app.add_page(pages.about_page, route='/about_us')
 app.add_page(pages.pricing_page, route='/pricing')

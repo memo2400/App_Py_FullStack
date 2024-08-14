@@ -15,11 +15,12 @@ def navigator_bar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     # Hacemos que al presionar el logo, regresamos a /Home
-                    rx.link( rx.image(                                                
-                        src="/chiplinear_106231.png",
-                        width="2.25em",
-                        height="auto",
-                        border_radius="25%",
+                    rx.link(
+                        rx.image(                                                
+                            src="/chiplinear_106231.png",
+                            width="2.25em",
+                            height="auto",
+                            border_radius="25%",
                         ),
                         href='/' # Go home
                     ),
@@ -35,11 +36,11 @@ def navigator_bar() -> rx.Component:
                 ),
                 rx.hstack(
                     navbar_link("Home", "/#"),
-                    navbar_link("About", "/aboutus"),
+                    navbar_link("About", "/about_us"),
                     navbar_link("Pricing", "/pricing"),
                     navbar_link("Contact", "/contact"),
                     navbar_link("Mis Dispositivos", "/#"),
-                    navbar_link("Suscripciones", "/Subs"),
+                    navbar_link("Suscripciones", "/#"),
                     spacing="5",
                 ),
                 rx.hstack(

@@ -6,6 +6,7 @@ from .. ui.base import base_page
 
 """ Se genera nueva pagina acerca de nosotros """
 
+# @rx.page(route='/about_us')
 def about_page() -> rx.Component:    
 
     # Documentacion aqui https://reflex.dev/docs/library/layout/stack/#vstack
