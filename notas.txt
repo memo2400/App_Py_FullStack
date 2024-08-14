@@ -155,5 +155,10 @@ agregamos forma pro de usar la navegacion
  fin de seccion
 
 vamos ahora acrear una State class que sera solo para navegar
+ ya funciona la navegacion de tipo Mobile Ful  HD
 
+01:28:08 
 
+fin de la seccion
+
+nueva seccion sera el contact form

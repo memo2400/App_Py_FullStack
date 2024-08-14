@@ -84,11 +84,18 @@ def navigator_bar() -> rx.Component:
                     rx.menu.trigger(
                         rx.icon("menu", size=30)
                     ),
+
+                    # para el menu de mobile usaremos el evento click para hacer la navegacion
+                    
                     rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
-                        rx.menu.item("Contact"),
+                        rx.menu.item("Home", on_click=navigation.NavState.to_home),
+                        rx.menu.item("About", on_click=navigation.NavState.to_about_us),
+                        rx.menu.item("Pricing", on_click=navigation.NavState.to_pricing),
+                        rx.menu.item("Contact", on_click=navigation.NavState.to_contact),
+
+                        rx.menu.item("Mis Dispositivos", on_click=navigation.NavState.to_mis_dispositivos),
+                        rx.menu.item("Suscripciones", on_click=navigation.NavState.to_suscripciones),
+
                         rx.menu.separator(),
                         rx.menu.item("Log in"),
                         rx.menu.item("Sign up"),
