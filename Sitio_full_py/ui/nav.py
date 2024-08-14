@@ -1,5 +1,9 @@
 import reflex as rx
 
+#   IMPORTO LA CARPETA NAVEGACION
+from .. import navigation
+
+
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
@@ -35,12 +39,12 @@ def navigator_bar() -> rx.Component:
                     align_items="center",
                 ),
                 rx.hstack(
-                    navbar_link("Home", "/#"),
-                    navbar_link("About", "/about_us"),
-                    navbar_link("Pricing", "/pricing"),
-                    navbar_link("Contact", "/contact"),
-                    navbar_link("Mis Dispositivos", "/#"),
-                    navbar_link("Suscripciones", "/#"),
+                    navbar_link("Home", navigation.routes.HOME_ROUTE),
+                    navbar_link("About", navigation.routes.ABOUT_US_ROUTE),
+                    navbar_link("Pricing", navigation.routes.PRICING_ROUTE),
+                    navbar_link("Contact", navigation.routes.CONTACT_ROUTE),
+                    navbar_link("Mis Dispositivos", navigation.routes.MIS_DISPOSITIVOS_ROUTE),
+                    navbar_link("Suscripciones", navigation.routes.SUSCRIPCIONES_ROUTE),
                     spacing="5",
                 ),
                 rx.hstack(
