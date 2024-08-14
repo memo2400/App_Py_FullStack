@@ -26,7 +26,7 @@ def navigator_bar() -> rx.Component:
                             height="auto",
                             border_radius="25%",
                         ),
-                        href='/' # Go home
+                        href=navigation.routes.HOME_ROUTE # Go home
                     ),
 
                     # Hacemos que el head sea in link a /Home 
@@ -34,7 +34,7 @@ def navigator_bar() -> rx.Component:
                         rx.heading(
                             "Tower", size="7", weight="bold"
                         ),
-                        href='/'
+                        href=navigation.routes.HOME_ROUTE
                     ),
                     align_items="center",
                 ),
