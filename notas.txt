@@ -9,6 +9,9 @@ python -m venv entvirs
 ejecuto
 entvir\Scripts\activate
 
+documentacion de entornos
+    https://codigofacilito.com/articulos/entornos-virtuales-python
+
 instalo refelx
 pip install reflex
 
@@ -162,3 +165,7 @@ vamos ahora acrear una State class que sera solo para navegar
 fin de la seccion
 
 nueva seccion sera el contact form
+
+    usaremos https://reflex.dev/docs/library/forms/form/
+
+01:33:21
