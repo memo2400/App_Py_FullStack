@@ -30,7 +30,8 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
     # queda mal colocado
     # return rx.container( 
     # https://reflex.dev/docs/library/layout/fragment/#fragment
-    return rx.fragment( 
+    #return rx.fragment( 
+    return rx.vstack( 
         # con pasar los argumentos ya se despliega la pagina
         #*args,
 
@@ -49,7 +50,8 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
             padding="1em",       
             width="100%",
             # text_align="center", 
-            id="my_content_ele_area"
+            id="my_content_ele_area",            
+            
         ),
 
         rx.color_mode.button(position="button-left"),
