@@ -13,10 +13,18 @@ class ContactState(rx.State):
     form_data: dict = {}        # para guardar los datos en diccionario
     did_sumitted: bool = False  # bandera
 
-    @rx.var
+    @rx.var    
     def thank_you (self):
+
         first_name_submitted = self.form_data.get("first_name") or ""
         return f"thank you | 謝謝 {first_name_submitted}" # Uso el string sustitution
+    
+    @rx.var
+    def before_submit (self):
+
+        return "fill out the form | 填寫表格"
+        
+
     
 
     def handle_submit(self, form_data: dict):
@@ -92,7 +100,7 @@ def contact_page() -> rx.Component:
             rx.heading("Contact us | 联系我们", size="8"),
 
             # agrego condicional (despues de cambio True , default false), ambos deben ser texto o objeto
-            rx.cond(ContactState.did_sumitted, ContactState.thank_you, rx.text("fill out the form | 填寫表格")),
+            rx.cond(ContactState.did_sumitted, ContactState.thank_you, ContactState.before_submit),
 
             # solo renderizo en escritorio y mobile separado
             rx.desktop_only(
