@@ -10,12 +10,20 @@ from .. import navigation
 """ Se genera nueva pagina acerca de nosotros """
 
 class ContactState(rx.State):
-    form_data: dict = {}
+    form_data: dict = {}        # para guardar los datos en diccionario
+    did_sumitted: bool = False  # bandera
+
+    @rx.var
+    def thank_you (self):
+        first_name_submitted = self.form_data.get("first_name") or ""
+        return f"thank you | 謝謝 {first_name_submitted}" # Uso el string sustitution
+    
 
     def handle_submit(self, form_data: dict):
         """Handle the form submit."""
         print (form_data)
         self.form_data = form_data
+        self.did_sumitted = True # actualizo bandera
 
 
 #@rx.page(route=navigation.NavState.to_contact)
@@ -27,6 +35,7 @@ def contact_page() -> rx.Component:
     # tuve un error al declarar dos veces el form
     # Con esta configuracion, la forma mantendra su proporcion sin
     # importar si esta en mbile o desktop
+
     my_form = rx.form(        
             rx.vstack(
                 # creamos horizontal stack
@@ -78,8 +87,12 @@ def contact_page() -> rx.Component:
 
     # Documentacion aqui https://reflex.dev/docs/library/layout/stack/#vstack
     # puedo usar my_child pero si uso el nombre repetido de la pagina contact falla
+
     my_child_contact = rx.vstack(
             rx.heading("Contact us | 联系我们", size="8"),
+
+            # agrego condicional (despues de cambio True , default false), ambos deben ser texto o objeto
+            rx.cond(ContactState.did_sumitted, ContactState.thank_you, rx.text("fill out the form | 填寫表格")),
 
             # solo renderizo en escritorio y mobile separado
             rx.desktop_only(

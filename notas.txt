@@ -7,7 +7,9 @@ creo entorno
 python -m venv entvirs
 
 ejecuto
-entvir\Scripts\activate
+    entvir\Scripts\activate
+    entvir\Scripts\activate
+    entvir\Scripts\activate
 
 documentacion de entornos
     https://codigofacilito.com/articulos/entornos-virtuales-python
