@@ -33,7 +33,7 @@ def contact_page() -> rx.Component:
                 rx.hstack(
                     rx.input(
                         name="first_name",
-                        placeholder="First Name",
+                        placeholder="First Name | 姓名",
                         # hacemos que el elemento sea requerido
                         required=True,  
                         width="50%",                  
@@ -41,7 +41,7 @@ def contact_page() -> rx.Component:
                     # <imput type=text> 
                     rx.input(
                         name="last_name",
-                        placeholder="Last Name",  
+                        placeholder="Last Name | 姓",  
                         width="50%",                  
                     ),
                     width='100%',
@@ -49,7 +49,7 @@ def contact_page() -> rx.Component:
                 # <imput type=email> 
                 rx.input(
                     name="email",
-                    placeholder="Email", 
+                    placeholder="Your Email | 您的电子邮件", 
                     width='100%',
                     type="email",
                 ),
@@ -62,7 +62,7 @@ def contact_page() -> rx.Component:
 
                 rx.text_area(
                     name ='message',
-                    placeholder='Your Messsage',
+                    placeholder='Your Messsage | 您的留言',
                     width='100%',
                     required=True,
                 ),
@@ -79,7 +79,7 @@ def contact_page() -> rx.Component:
     # Documentacion aqui https://reflex.dev/docs/library/layout/stack/#vstack
     # puedo usar my_child pero si uso el nombre repetido de la pagina contact falla
     my_child_contact = rx.vstack(
-            rx.heading("Contact us", size="8"),
+            rx.heading("Contact us | 联系我们", size="8"),
 
             # solo renderizo en escritorio y mobile separado
             rx.desktop_only(

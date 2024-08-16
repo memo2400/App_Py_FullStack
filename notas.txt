@@ -173,4 +173,8 @@ nueva seccion sera el contact form
 con este video heche andar la terminal de VScode
     https://www.youtube.com/watch?v=r30HSIfWIds
 
-    win + r = gpedit.msc
+    win + r = 
+    
+01:40:42
+
+    fin de seccion
