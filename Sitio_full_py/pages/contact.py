@@ -13,7 +13,7 @@ from .. import navigation
 class ContactState(rx.State):
     form_data: dict = {}        # para guardar los datos en diccionario
     did_sumitted: bool = False  # bandera
-    time_delay: int = 4         # cuento hasta 4 seg
+    time_delay: int = 20         # cuento hasta 4 seg
 
     @rx.var
     def time_delay_label(self):
@@ -55,7 +55,9 @@ class ContactState(rx.State):
 
     async def star_timer(self):
 
-        while self.time_delay > 0:
+        # la condicion fuera de parentesis causo error
+        while (self.time_delay > 0):
+            yield
             await asyncio.sleep(1)
             self.time_delay -= 1
             yield
