@@ -8,6 +8,12 @@ from .. ui.base import base_page
 from .. import navigation
 
 
+class ContactEntryModel(rx.Model):  # nombre de la tabla o libreo, sheet ContactEntryModel
+    first_name: str
+    last_name: str
+    email: str
+    message: str
+
 """ Se genera nueva pagina acerca de nosotros """
 
 class ContactState(rx.State):

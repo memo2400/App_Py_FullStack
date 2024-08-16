@@ -188,3 +188,16 @@ con este video heche andar la terminal de VScode
 01:49:40
 
 01:53:56  se termina la seccion
+
+ usamos esto https://reflex.dev/docs/database/overview/
+    https://sqlmodel.tiangolo.com/
+
+PAra iniciar la database 
+    Este se ejecuta solo una vez
+    reflex db init
+    
+    Este debe ejecutarse cada vez que se haga un cambio en el model
+    reflex db makemigrations
+    reflex db migrate
+
+02:00:31
