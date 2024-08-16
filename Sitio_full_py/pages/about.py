@@ -13,7 +13,7 @@ def about_page() -> rx.Component:
     cuerpo_pagina_about = rx.vstack(
             rx.heading("About us", size="9"),
             rx.text(
-                "Conozca mas sobre nosotros ",                
+                "Conozca mas sobre nosotros, somos una empresa dedicada a la resolucion de problemas mediante aplicaciones",                
             ),
            
             spacing="5",
