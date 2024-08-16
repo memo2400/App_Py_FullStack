@@ -182,4 +182,5 @@ con este video heche andar la terminal de VScode
     fin de seccion
 
 01:45:59
-    
+
+01:48:00

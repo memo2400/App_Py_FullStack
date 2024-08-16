@@ -1,9 +1,10 @@
 
-from tkinter.tix import Tree
 import reflex as rx
+import asyncio
 
+
+from tkinter.tix import Tree
 from .. ui.base import base_page
-
 from .. import navigation
 
 
@@ -26,13 +27,19 @@ class ContactState(rx.State):
         
 
     
-
-    def handle_submit(self, form_data: dict):
+    # debe ser una funcion asincrona
+    async def handle_submit(self, form_data: dict):
         """Handle the form submit."""
         print (form_data)
         self.form_data = form_data
         self.did_sumitted = True # actualizo bandera
+        yield
 
+        # Set a timmer to change the flag, de 3 seg , no fucciona con time ni con async solo
+        # se debe hacer uso del yield
+        await asyncio.sleep(3)
+        self.did_sumitted = False
+        yield
 
 #@rx.page(route=navigation.NavState.to_contact)
 # para estilizar la pagina usamos
