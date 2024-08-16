@@ -13,7 +13,15 @@ from .. import navigation
 class ContactState(rx.State):
     form_data: dict = {}        # para guardar los datos en diccionario
     did_sumitted: bool = False  # bandera
+    time_delay: int = 4         # cuento hasta 4 seg
 
+    @rx.var
+    def time_delay_label(self):
+        if self.time_delay < 1:
+            return "no time left | 沒有時間了"
+        return f"{self.time_delay} seconds | 秒"
+    
+    
     @rx.var    
     def thank_you (self):
 
@@ -40,10 +48,22 @@ class ContactState(rx.State):
         await asyncio.sleep(3)
         self.did_sumitted = False
         yield
+    
+
+    # Funcion que dimunuye un segundo en cada ciclo, 
+    # si es menor a 0 se detiene 
+
+    async def star_timer(self):
+
+        while self.time_delay > 0:
+            await asyncio.sleep(1)
+            self.time_delay -= 1
+            yield
 
 #@rx.page(route=navigation.NavState.to_contact)
 # para estilizar la pagina usamos
-@rx.page(route=navigation.routes.CONTACT_ROUTE)
+#  se carga la funcion del timer de incio
+@rx.page(on_load=ContactState.star_timer, route=navigation.routes.CONTACT_ROUTE)
 
 def contact_page() -> rx.Component:    
 
@@ -105,6 +125,8 @@ def contact_page() -> rx.Component:
 
     my_child_contact = rx.vstack(
             rx.heading("Contact us | 联系我们", size="8"),
+
+            rx.text(ContactState.time_delay),
 
             # agrego condicional (despues de cambio True , default false), ambos deben ser texto o objeto
             rx.cond(ContactState.did_sumitted, ContactState.thank_you, ContactState.before_submit),
