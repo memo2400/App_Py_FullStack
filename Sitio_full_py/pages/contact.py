@@ -6,12 +6,14 @@ import asyncio
 from tkinter.tix import Tree
 from .. ui.base import base_page
 from .. import navigation
+from sqlmodel import Field
 
 
+# Cada vez que se haga cambios debemos ejecutar el db makemigrations, etc
 class ContactEntryModel(rx.Model, table=True):  # nombre de la tabla o libreo, sheet ContactEntryModel
-    first_name: str
-    last_name: str
-    email: str
+    first_name: str                                     # se pude usar | None = None
+    last_name: str      = Field(nullable=True)          # otra forma de manejar el espacio vacio
+    email: str          = Field(nullable=True)
     message: str
 
 """ Se genera nueva pagina acerca de nosotros """
