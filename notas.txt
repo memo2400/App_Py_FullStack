@@ -201,3 +201,15 @@ PAra iniciar la database
     reflex db migrate
 
 02:00:31
+
+     creo la tabla y hago los dos comandos
+
+02:01:24 aqui hago la migracion pero me fallo
+
+    AQUI EL GRAN ERRO ERA QUE TENIA QUE GENERAR UNA CARPETA versions, 
+    de forma previa a la ejecucion del makemigrations
+
+    Generating C:\Users\Laptop\SWF\Python\App_Py_FullStack\alembic\versions\c960a3ac467b_.py ...  done
+
+02:02:53
+     fin de seccion
