@@ -46,9 +46,31 @@ class ContactState(rx.State):
         """Handle the form submit."""
         print (form_data)
         self.form_data = form_data
-        self.did_sumitted = True # actualizo bandera
-        yield
 
+        data_transformed = {}
+        for k, v in form_data.items():      # recoroo los itsten del formulario
+            if v == "" or v is None:
+                continue
+
+            data_transformed [k] = v
+            print(data_transformed)         # con esta impresion veo como se va llenando
+ 
+
+        # Creamos la instancia del DB
+        with rx.session() as session:
+            db_entry = ContactEntryModel (
+
+            # aqui dentro colocamos lo que aneviaremos a BD ** para unpackage
+            **data_transformed
+
+            )
+            session.add(db_entry)   # Preparop Envio a BD
+            session.commit()        # Hago el envio a BD
+
+            self.did_sumitted = True # actualizo bandera
+            yield
+
+        # no usar
         # Set a timmer to change the flag, de 3 seg , no fucciona con time ni con async solo
         # se debe hacer uso del yield
         await asyncio.sleep(3)

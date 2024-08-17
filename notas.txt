@@ -213,3 +213,8 @@ PAra iniciar la database
 
 02:02:53
      fin de seccion
+
+02:09:45 
+
+    fin de SECCION
+
