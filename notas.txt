@@ -220,3 +220,8 @@ PAra iniciar la database
 
 02:12:11
 
+02:17:05
+ find e la seccion
+
+02:17:46
+

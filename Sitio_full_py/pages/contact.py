@@ -106,6 +106,7 @@ class ContactState(rx.State):
             self.time_delay -= 1
             yield
 
+
 #@rx.page(route=navigation.NavState.to_contact)
 # para estilizar la pagina usamos
 #  se carga la funcion del timer de incio
