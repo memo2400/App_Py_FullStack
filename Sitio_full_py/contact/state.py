@@ -1,41 +1,17 @@
 
 import reflex as rx
 import asyncio
-import sqlalchemy
-
 
 from tkinter.tix import Tree
+from .model import ContactEntryModel
 
-
-from sqlmodel import Field
-
-from datetime import datetime, timezone
-
-def get_utc_time_now() -> datetime:
-    return datetime.now(timezone.utc) 
-
-
-# Cada vez que se haga cambios debemos ejecutar el db makemigrations, etc
-class ContactEntryModel(rx.Model, table=True):  # nombre de la tabla o libreo, sheet ContactEntryModel
-    first_name: str                                     # se pude usar | None = None
-    last_name: str      = Field(nullable=True)          # otra forma de manejar el espacio vacio
-    email: str          = Field(nullable=True)
-    message: str
-    time_at: datetime   = Field(
-        default_factory=get_utc_time_now,        
-        sa_type=sqlalchemy.DateTime(timezone=True),
-        sa_column_kwargs= {
-            'server_default': sqlalchemy.func.now()
-        },
-        nullable= False,
-    )
 
 """ Se genera nueva pagina acerca de nosotros """
 
 class ContactState(rx.State):
-    form_data: dict = {}        # para guardar los datos en diccionario
-    did_sumitted: bool = False  # bandera
-    time_delay: int = 20         # cuento hasta 4 seg
+    form_data: dict = {}            # para guardar los datos en diccionario
+    did_sumitted: bool = False      # bandera
+    time_delay: int = 20            # cuento hasta 4 seg
 
     @rx.var
     def time_delay_label(self):
