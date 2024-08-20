@@ -31,5 +31,12 @@ class NavState(rx.State):
 
         return rx.redirect(routes.SUSCRIPCIONES_ROUTE)
     
+
+    # Pagina Data
+    
+    def to_date (self):
+
+        return rx.redirect(routes.DATE_ROUTE)
+    
     
         
