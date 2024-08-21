@@ -227,3 +227,5 @@ PAra iniciar la database
 
 
 02:22:23 
+    doc del array y diccionasrios
+    https://stackoverflow.com/questions/6521892/how-to-access-a-dictionary-key-value-present-inside-a-list
