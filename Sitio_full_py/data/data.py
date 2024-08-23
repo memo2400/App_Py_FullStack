@@ -35,4 +35,18 @@ data_frame = pd.read_csv(file_name)
 
 # print(data_frame.columns.values)
 
+def data_procesing ():
+
+    test_dict = {}
+    ls_dict = []
+
+    for index, row in data_frame.iterrows():
+        print(f"Fila: {index}")
+        print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
+        test_dict ['150'] = {row['150']}
+        test_dict ['4'] = {row['4']}
+        ls_dict.append(test_dict)
+
+    return ls_dict
+        
 

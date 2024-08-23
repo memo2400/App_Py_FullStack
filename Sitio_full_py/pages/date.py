@@ -3,6 +3,8 @@ import reflex as rx
 
 from .. import navigation
 from ..ui.base import base_page
+from ..data.data import data_procesing
+from Sitio_full_py.data import data
 
 """Se genera grafica"""
 import pandas as pd
@@ -33,8 +35,8 @@ data01 = [
 def scatter_simple():
     return rx.recharts.scatter_chart(
         rx.recharts.scatter(
-            data=data01,
-            # data=dictionary,
+            # data=data01,
+            data=data_procesing,
             fill="#8884d8",
         ),
         rx.recharts.x_axis(data_key="x", type_="number"),
@@ -43,7 +45,7 @@ def scatter_simple():
         height=300,
     ),
 
-
+print (data_procesing)
 
 """ Se genera nueva pagina datos """
 
