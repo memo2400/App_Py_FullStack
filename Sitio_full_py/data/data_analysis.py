@@ -50,7 +50,7 @@ def data_procesing ():
         test_dict ['150'] = row['150']
         test_dict ['4'] = row['4']
         ls_dict.append(test_dict)
-        ls_dict_changed = ls_dict
+
 
     return ls_dict
     
