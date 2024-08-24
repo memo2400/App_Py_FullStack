@@ -104,9 +104,10 @@ app.add_page(index)
 # app.add_page(pages.pricing_page, route='/pricing')
 
 
-# Nueva forma de navegar para evitar errores
+# Nueva forma de navegar para evitar errores, aqui deberan ir las paginas 'por default'
 app.add_page(pages.about_page, route=navigation.routes.ABOUT_US_ROUTE)
 app.add_page(contact.contact_page, route=navigation.routes.CONTACT_ROUTE)
 app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)
 
+app.add_page(contact.contact_entries_list_page, route=navigation.routes.CONTACT_ENTRIES_ROUTE)
 

@@ -5,12 +5,18 @@ import asyncio
 from tkinter.tix import Tree
 from .model import ContactEntryModel
 
+from sqlmodel import select
+from typing import List
+
 
 """ Se genera nueva pagina acerca de nosotros """
 
 class ContactState(rx.State):
     form_data: dict = {}            # para guardar los datos en diccionario
     did_sumitted: bool = False      # bandera
+    entries: List ['ContactEntryModel'] = []        # una lista vacia por default
+
+    # timer que ya no se usara, cambie de opinion y si se usar
     time_delay: int = 20            # cuento hasta 4 seg
 
     @rx.var
@@ -81,3 +87,12 @@ class ContactState(rx.State):
             await asyncio.sleep(1)
             self.time_delay -= 1
             yield
+    
+    def list_entries (self):
+        # nos devuelve todas las entries back
+        with rx.session() as session:
+            entries = session.exec(
+                select(ContactEntryModel)
+            ).all()
+            self.entries = entries
+

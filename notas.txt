@@ -232,3 +232,8 @@ PAra iniciar la database
 
 
 02:24:57
+
+
+asi es como ya tenemos todo sobre la seccion contac en partes
+de forma modular
+02:26:50         fin de seccion

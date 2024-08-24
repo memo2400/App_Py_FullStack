@@ -18,6 +18,20 @@ from . import form, state
 # @rx.page(on_load= state.ContactState.star_timer, route=navigation.routes.CONTACT_ROUTE)
 
 
+def contact_entries_list_page() -> rx.Component:
+
+    return base_page(
+        rx.vstack(
+            rx.heading(
+                "Contact us | 联系我们",
+                size="8",
+                ),
+            spacing="5",
+            justify="center",
+            align="center",
+            min_height="85vh",
+        )
+    )
 
 
 def contact_page() -> rx.Component:    
