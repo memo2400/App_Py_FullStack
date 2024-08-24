@@ -17,7 +17,8 @@ def get_utc_time_now() -> datetime:
 
 
 # Cada vez que se haga cambios debemos ejecutar el db makemigrations, etc
-class ContactEntryModel(rx.Model, table=True):  # nombre de la tabla o libreo, sheet ContactEntryModel
+class ContactEntryModel(rx.Model, table=True):          # nombre de la tabla o libreo, sheet ContactEntryModel
+    user_id : int | None = None                         # el defult none
     first_name: str                                     # se pude usar | None = None
     last_name: str      = Field(nullable=True)          # otra forma de manejar el espacio vacio
     email: str          = Field(nullable=True)

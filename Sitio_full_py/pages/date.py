@@ -37,17 +37,18 @@ data01 = [
 data03 = data_procesing()
 
 def scatter_simple():
+    
     return rx.recharts.scatter_chart(
         rx.recharts.scatter(
-            data=data01,
-            # data=data03,
+            # data=data01,
+            data=data03,
             fill="#009aff",
         ),
         rx.recharts.x_axis(
-            data_key="x", 
-            type_="category",
+            data_key="150",                     # poner el header necesario
+            type_="number",
             ),
-        rx.recharts.y_axis(data_key="z"),
+        rx.recharts.y_axis(data_key="4"),       # poner el header necesario
         width="100%",
         height=200,
     ),

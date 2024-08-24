@@ -56,7 +56,7 @@ def data_procesing ():
         #print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
         
         if index < 10:
-            print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
+            # print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
 
             test_dict ['150'] = row['150']
             test_dict ['4'] = row['4']
@@ -67,7 +67,7 @@ def data_procesing ():
             ls_dict.append(test_dict)
 
 
-    return print (ls_dict)
+    return ls_dict
 
 
 
