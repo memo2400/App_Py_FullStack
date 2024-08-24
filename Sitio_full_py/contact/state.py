@@ -94,5 +94,6 @@ class ContactState(rx.State):
             entries = session.exec(
                 select(ContactEntryModel)
             ).all()
+            # print (entries)
             self.entries = entries
 

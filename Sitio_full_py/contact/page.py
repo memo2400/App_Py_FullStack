@@ -8,7 +8,7 @@ from .. ui.base import base_page
 from .. import navigation
 # from .. import contact # ya no se usara porque se movio el codigo a esta misma carpeta
 
-from . import form, state
+from . import form, state, model
 
 
 #@rx.page(route=navigation.NavState.to_contact)
@@ -17,19 +17,29 @@ from . import form, state
 
 # @rx.page(on_load= state.ContactState.star_timer, route=navigation.routes.CONTACT_ROUTE)
 
+def contact_entry_list_item(contac: model.ContactEntryModel):
+    return rx.box(
+        rx.text(
+            contac.first_name,
+            contac.message,
+        ),
+        padding='1em',
+    )
 
 def contact_entries_list_page() -> rx.Component:
 
     return base_page(
         rx.vstack(
             rx.heading(
-                "Contact us | 联系我们",
-                size="8",
+                "Contact Entries | 联系条目",
+                size="5",
                 ),
+            # rx.text(state.ContactState.entries),
             spacing="5",
-            justify="center",
+            # justify="center",     # lo comento para estar no en centro sino en superior
             align="center",
             min_height="85vh",
+
         )
     )
 
