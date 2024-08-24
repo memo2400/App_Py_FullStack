@@ -241,3 +241,7 @@ de forma modular
 
 02:33:04
 
+se finaliza seccion de consulta y mostrarlo en la pagina.
+
+02:36:50
+

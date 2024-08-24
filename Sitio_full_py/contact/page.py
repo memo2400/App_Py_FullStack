@@ -19,12 +19,20 @@ from . import form, state, model
 
 def contact_entry_list_item(contac: model.ContactEntryModel):
     return rx.box(
-        rx.text(
+        rx.heading(
             contac.first_name,
+        ),
+        rx.text(         
             contac.message,
         ),
         padding='1em',
     )
+
+# def foreach_callback(text):
+#     return rx.box (
+
+#         rx.text(text),
+#     )
 
 def contact_entries_list_page() -> rx.Component:
 
@@ -33,7 +41,16 @@ def contact_entries_list_page() -> rx.Component:
             rx.heading(
                 "Contact Entries | 联系条目",
                 size="5",
-                ),
+            ),
+            # rx.foreach(
+            #     ["abd","abc", "hol"],       # cada uno de estos terminos se veran en la pagina
+            #     foreach_callback            # esta funcion debe ser un return rx.box(rx.text)
+            # ),
+            rx.foreach(
+                state.ContactState.entries, 
+                contact_entry_list_item,
+            ),
+
             # rx.text(state.ContactState.entries),
             spacing="5",
             # justify="center",     # lo comento para estar no en centro sino en superior

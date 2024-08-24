@@ -88,6 +88,7 @@ class ContactState(rx.State):
             self.time_delay -= 1
             yield
     
+    # esta es la query hacia BD
     def list_entries (self):
         # nos devuelve todas las entries back
         with rx.session() as session:
