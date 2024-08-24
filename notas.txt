@@ -245,3 +245,42 @@ se finaliza seccion de consulta y mostrarlo en la pagina.
 
 02:36:50
 
+documentacion 
+    https://www.radix-ui.com/colors
+colors
+
+    "gray",
+    "mauve",
+    "slate",
+    "sage",
+    "olive",
+    "sand",
+    "tomato",
+    "red",
+    "ruby",
+    "crimson",
+    "pink",
+    "plum",
+    "purple",
+    "violet",
+    "iris",
+    "indigo",
+    "blue",
+    "cyan",
+    "teal",
+    "jade",
+    "green",
+    "grass",
+    "brown",
+    "orange",
+    "sky",
+    "mint",
+    "lime",
+    "yellow",
+    "amber",
+    "gold",
+    "bronze",
+    "gray",
+    "accent",
+    "black",
+    "white",

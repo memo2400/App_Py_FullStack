@@ -57,7 +57,7 @@ def contact_form() -> rx.Component:
                 ),
 
                 # enviamos en consola lo datos como Json
-                rx.button("Submit", type="submit"),
+                rx.button("Submit", type="submit", bg=rx.color('violet', 10, False)),
             ),
             on_submit=ContactState.handle_submit,
 
