@@ -16,6 +16,7 @@ from .ui.base import base_page
 
 # importo las carpertas entera y dejo de usar la linea de arriba
 from . import pages, navigation
+from . import contact
 
 
 
@@ -105,6 +106,7 @@ app.add_page(index)
 
 # Nueva forma de navegar para evitar errores
 app.add_page(pages.about_page, route=navigation.routes.ABOUT_US_ROUTE)
+app.add_page(contact.contact_page, route=navigation.routes.CONTACT_ROUTE)
 app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)
 
 

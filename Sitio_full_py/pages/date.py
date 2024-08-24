@@ -25,7 +25,7 @@ dictionary = data_frame.to_dict()
 # la aplicacion solo toma los dos primeros elementos (0 y 1), {0, 1, 2 ...}
 
 data01 = [
-    {"x": 100, "y": 200, "z": 200},
+    {"x": 10.5, "y": 200, "z": 200},
     {"x": 120, "y": 100, "z": 260},
     {"x": 170, "y": 300, "z": 400},
     {"x": 170, "y": 250, "z": 280},
@@ -33,20 +33,23 @@ data01 = [
     {"x": 110, "y": 280, "z": 200},
     ]
 
-data_procesing ()
-data03 = ls_dict_changed
+# data_procesing ()
+data03 = data_procesing()
 
 def scatter_simple():
     return rx.recharts.scatter_chart(
         rx.recharts.scatter(
             data=data01,
             # data=data03,
-            fill="#8884d8",
+            fill="#009aff",
         ),
-        rx.recharts.x_axis(data_key="x", type_="number"),
-        rx.recharts.y_axis(data_key="y"),
+        rx.recharts.x_axis(
+            data_key="x", 
+            type_="category",
+            ),
+        rx.recharts.y_axis(data_key="z"),
         width="100%",
-        height=300,
+        height=200,
     ),
 
 

@@ -26,11 +26,18 @@ ls_dict_test.append(dict_2)
 
 """Se genera grafica"""
 import pandas as pd
+import os
 
-file_name = "Sitio_full_py/pages/iris.csv"
-direction = " "
+file_name = "iris.csv"
 
-data_frame = pd.read_csv(file_name)
+# casa
+# direction = "C:/Users/Casa/PSW/Python/App_Py_FullStack/Sitio_full_py/data"
+
+# laptop
+direction = "C:/Users/Laptop/SWF/Python/App_Py_FullStack/Sitio_full_py/data"
+fullpath = os.path.join(direction, file_name)
+
+data_frame = pd.read_csv(fullpath)
 # dictionary = data_frame.to_dict()
 
 # print(data_frame.columns.values)
@@ -41,19 +48,27 @@ ls_dict_changed = []
 def data_procesing ():
 
     test_dict = {}
-    ls_dict = []
+    ls_dict : list = []
     
 
     for index, row in data_frame.iterrows():
         # print(f"Fila: {index}")
         #print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
         
-        test_dict ['x'] = row['150']
-        test_dict ['y'] = row['4']
-        ls_dict.append(test_dict)
+        if index < 10:
+            print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
+
+            test_dict ['150'] = row['150']
+            test_dict ['4'] = row['4']
+
+            # test_dict ['x'] = row['150']
+            # test_dict ['y'] = row['4']
+
+            ls_dict.append(test_dict)
 
 
     return print (ls_dict)
+
 
 
     
@@ -66,4 +81,4 @@ def data_procesing ():
 #     # for x in data_procesing.ls_dic
         
 
-# dictionary_processed()
+# data_procesing()
