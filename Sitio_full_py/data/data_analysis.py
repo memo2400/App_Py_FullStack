@@ -55,19 +55,25 @@ def data_procesing ():
         # print(f"Fila: {index}")
         #print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
         
-        if index < 10:
+        if index < 150:
             # print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
 
-            test_dict ['150'] = row['150']
-            test_dict ['4'] = row['4']
+            # test_dict ['150'] = row['150']
+            # test_dict ['4'] = row['4']
 
-            # test_dict ['x'] = row['150']
-            # test_dict ['y'] = row['4']
+            test_dict = {
+
+            'x': row['setosa'],
+            'y': row['versicolor'],
+
+            }
 
             ls_dict.append(test_dict)
 
 
     return ls_dict
+    # return print(ls_dict)
+
 
 
 
@@ -81,4 +87,4 @@ def data_procesing ():
 #     # for x in data_procesing.ls_dic
         
 
-# data_procesing()
+data_procesing()

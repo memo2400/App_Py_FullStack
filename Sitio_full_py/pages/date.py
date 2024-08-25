@@ -45,10 +45,10 @@ def scatter_simple():
             fill="#009aff",
         ),
         rx.recharts.x_axis(
-            data_key="150",                     # poner el header necesario
+            data_key="x",                     # poner el header necesario
             type_="number",
             ),
-        rx.recharts.y_axis(data_key="4"),       # poner el header necesario
+        rx.recharts.y_axis(data_key="y"),       # poner el header necesario
         width="100%",
         height=200,
     ),

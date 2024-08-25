@@ -32,7 +32,7 @@ def navigator_bar() -> rx.Component:
                     # Hacemos que el head sea in link a /Home 
                     rx.link(
                         rx.heading(
-                            "Tower", size="7", weight="bold"
+                            "TecnoTower", size="7", weight="bold"
                         ),
                         href=navigation.routes.HOME_ROUTE
                     ),
