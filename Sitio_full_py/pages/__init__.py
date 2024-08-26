@@ -4,7 +4,7 @@ from .pricing import pricing_page
 
 # si no la comentaba salia error
 # from .contact import contact_page
-from .date import date_page
+from .data import date_page
 
 # aqui iran los metodos
 

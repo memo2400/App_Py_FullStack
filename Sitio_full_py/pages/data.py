@@ -76,7 +76,7 @@ def scatter_simple():
 
 """ Se genera nueva pagina datos """
 
-@rx.page (route=navigation.routes.DATE_ROUTE)
+@rx.page (route=navigation.routes.DATA_ROUTE)
 
 def date_page() -> rx.Component:    
 

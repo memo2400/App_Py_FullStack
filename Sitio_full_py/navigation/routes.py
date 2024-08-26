@@ -11,7 +11,7 @@ PRICING_ROUTE = '/pricing'
 
 MIS_DISPOSITIVOS_ROUTE = '/dispositivos'
 SUSCRIPCIONES_ROUTE = '/suscripciones'
-DATE_ROUTE = '/Date'
+DATA_ROUTE = '/data'
 CONTACT_ENTRIES_ROUTE = '/contact/entries'
 
 

@@ -115,3 +115,4 @@ app.add_page(
     on_load=contact.ContactState.list_entries,                      # cargamos el listado de las entries
     )
 
+# app.add_page(data. , route=navigation.routes)

@@ -35,7 +35,9 @@ file_name = "iris.csv"
 
 # laptop
 direction = "C:/Users/Laptop/SWF/Python/App_Py_FullStack/Sitio_full_py/data"
-fullpath = os.path.join(direction, file_name)
+# fullpath = os.path.join(direction, file_name)
+
+fullpath = "Sitio_full_py/pages/iris.csv"           # Debe funcionar en cualquier equipo
 
 data_frame = pd.read_csv(fullpath)
 # dictionary = data_frame.to_dict()

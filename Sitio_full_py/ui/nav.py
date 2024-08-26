@@ -43,7 +43,7 @@ def navigator_bar() -> rx.Component:
                     navbar_link("About", navigation.routes.ABOUT_US_ROUTE),
                     navbar_link("Pricing", navigation.routes.PRICING_ROUTE),
                     navbar_link("Contact", navigation.routes.CONTACT_ROUTE),
-                    navbar_link("Data", navigation.routes.DATE_ROUTE),
+                    navbar_link("Data", navigation.routes.DATA_ROUTE),
                     navbar_link("Suscripciones", navigation.routes.SUSCRIPCIONES_ROUTE),
                     spacing="5",
                 ),
@@ -93,7 +93,7 @@ def navigator_bar() -> rx.Component:
                         rx.menu.item("Pricing", on_click=navigation.NavState.to_pricing),
                         rx.menu.item("Contact", on_click=navigation.NavState.to_contact),
 
-                        rx.menu.item("Data", on_click=navigation.NavState.to_date),
+                        rx.menu.item("Data", on_click=navigation.NavState.to_data),
                         rx.menu.item("Suscripciones", on_click=navigation.NavState.to_suscripciones),
 
                         rx.menu.separator(),

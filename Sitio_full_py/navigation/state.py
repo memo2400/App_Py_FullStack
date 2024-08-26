@@ -34,9 +34,9 @@ class NavState(rx.State):
 
     # Pagina Data
     
-    def to_date (self):
+    def to_data (self):
 
-        return rx.redirect(routes.DATE_ROUTE)
+        return rx.redirect(routes.DATA_ROUTE)
     
     
         
