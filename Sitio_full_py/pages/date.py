@@ -3,7 +3,9 @@ import reflex as rx
 
 from .. import navigation
 from ..ui.base import base_page
-from ..data.data_analysis import data_procesing
+# from ..data.data_analysis import data_procesing
+from ..data import data_analysis
+
 from ..data.data_analysis import ls_dict_changed
 from Sitio_full_py.data import data_analysis
 
@@ -34,7 +36,9 @@ data01 = [
     ]
 
 # data_procesing ()
-data03 = data_procesing()
+data03 = data_analysis.data_procesing_setosa()
+data04 = data_analysis.data_procesing_versicolor()
+data05 = data_analysis.data_procesing_virginica()
 
 def scatter_simple():
     
@@ -43,12 +47,27 @@ def scatter_simple():
             # data=data01,
             data=data03,
             fill="#009aff",
+            name="setosa",
+        ),
+        rx.recharts.scatter(
+            # data=data01,
+            data=data04,
+            fill="#46A758",
+            name="versicolor",
+        ),
+        rx.recharts.scatter(
+            # data=data01,
+            data=data05,
+            fill="#EF5F00",
+            name="virginica",
         ),
         rx.recharts.x_axis(
-            data_key="x",                     # poner el header necesario
+            data_key="x",                                       # poner el header necesario
             type_="number",
             ),
-        rx.recharts.y_axis(data_key="y"),       # poner el header necesario
+        rx.recharts.y_axis(data_key="y"),                       # poner el header necesario
+        rx.recharts.cartesian_grid(stroke_dasharray="3 3"),     # grid
+        rx.recharts.legend(),                                   # legenda
         width="100%",
         height=200,
     ),

@@ -45,7 +45,7 @@ data_frame = pd.read_csv(fullpath)
 ls_dict_changed = []
 
  
-def data_procesing ():
+def data_procesing_setosa ():
 
     test_dict = {}
     ls_dict : list = []
@@ -53,9 +53,10 @@ def data_procesing ():
 
     for index, row in data_frame.iterrows():
         # print(f"Fila: {index}")
-        #print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
+        # print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
         
-        if index < 150:
+        # if index < 150:
+        if row['virginica'] == 0: 
             # print(f"150: {row['150']}, 4: {row['4']}, versicolor: {row['versicolor']}")
 
             # test_dict ['150'] = row['150']
@@ -76,7 +77,48 @@ def data_procesing ():
 
 
 
+def data_procesing_versicolor ():
 
+    test_dict = {}
+    ls_dict : list = []
+    
+    for index, row in data_frame.iterrows():
+        
+        if row['virginica'] == 1: 
+
+            test_dict = {
+            'x': row['setosa'],
+            'y': row['versicolor'],
+            }
+
+            ls_dict.append(test_dict)
+
+    return ls_dict
+    # return print(ls_dict)
+
+
+def data_procesing_virginica ():
+
+    test_dict = {}
+    ls_dict : list = []
+    
+    for index, row in data_frame.iterrows():
+        
+        if row['virginica'] == 2: 
+
+            test_dict = {
+            'x': row['setosa'],
+            'y': row['versicolor'],
+            }
+
+            ls_dict.append(test_dict)
+
+    return ls_dict
+    # return print(ls_dict)
+
+
+
+data_procesing_virginica()
     
 
 # def dictionary_processed ():
@@ -87,4 +129,3 @@ def data_procesing ():
 #     # for x in data_procesing.ls_dic
         
 
-data_procesing()
