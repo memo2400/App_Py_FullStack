@@ -109,10 +109,13 @@ app.add_page(pages.about_page, route=navigation.routes.ABOUT_US_ROUTE)
 app.add_page(contact.contact_page, route=navigation.routes.CONTACT_ROUTE)
 app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)
 
+# El error era que me faltaba el .Data_route
+app.add_page(pages.data_page, route=navigation.routes.DATA_ROUTE)
+
 app.add_page(
     contact.contact_entries_list_page, 
     route=navigation.routes.CONTACT_ENTRIES_ROUTE,
     on_load=contact.ContactState.list_entries,                      # cargamos el listado de las entries
     )
 
-# app.add_page(data. , route=navigation.routes)
+

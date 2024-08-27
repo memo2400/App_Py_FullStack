@@ -36,7 +36,7 @@ class NavState(rx.State):
     
     def to_data (self):
 
-        return rx.redirect(routes.DATA_ROUTE)
+        return rx.redirect(routes.CONTACT_ENTRIES_ROUTE)
     
     
         

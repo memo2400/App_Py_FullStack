@@ -76,9 +76,9 @@ def scatter_simple():
 
 """ Se genera nueva pagina datos """
 
-@rx.page (route=navigation.routes.DATA_ROUTE)
+# @rx.page (route=navigation.routes.DATA_ROUTE)
 
-def date_page() -> rx.Component:    
+def data_page() -> rx.Component:    
 
     # Documentacion aqui https://reflex.dev/docs/library/layout/stack/#vstack
     my_child = rx.vstack(
