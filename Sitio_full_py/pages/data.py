@@ -8,6 +8,7 @@ from ..data import data_analysis
 
 from ..data.data_analysis import ls_dict_changed
 from Sitio_full_py.data import data_analysis
+from ..data.random_data import generated_temperatures
 
 """Se genera grafica"""
 import pandas as pd
@@ -39,6 +40,8 @@ data01 = [
 data03 = data_analysis.data_procesing_setosa()
 data04 = data_analysis.data_procesing_versicolor()
 data05 = data_analysis.data_procesing_virginica()
+
+data06 = generated_temperatures()
 
 def scatter_simple():
     
@@ -72,6 +75,30 @@ def scatter_simple():
         height=200,
     ),
 
+def scatter_temperature():
+    
+    return rx.recharts.scatter_chart(
+        rx.recharts.scatter(
+            # data=data01,
+            data=data06,
+            # fill="#EF5F00",
+            fill="brown",
+            name="temperatura",
+        ),
+        rx.recharts.x_axis(
+            data_key="x",                                       # poner el header necesario
+            type_="category",
+            ),
+        rx.recharts.y_axis(
+            data_key="y", 
+            type_="number"
+        ),                       # poner el header necesario
+        rx.recharts.cartesian_grid(stroke_dasharray="3 3"),     # grid
+        rx.recharts.legend(),                                   # legenda
+        width="100%",
+        height=200,
+    ),
+
 
 
 """ Se genera nueva pagina datos """
@@ -93,6 +120,16 @@ def data_page() -> rx.Component:
                     width="50%",
                     ),
 
+                rx.text(
+                    "here is a graphic of temperatures",                
+                    ),
+
+                rx.hstack(
+                    scatter_temperature(),
+                    width="50%",
+                    ),
+                
+
                 spacing="5",
                 justify="center", # tenia centar en lugar de center
                 align="center", # podemos usar end, strech et etc
@@ -105,3 +142,6 @@ def data_page() -> rx.Component:
 
     # Base page gets my_child
     return base_page(my_child)
+
+
+

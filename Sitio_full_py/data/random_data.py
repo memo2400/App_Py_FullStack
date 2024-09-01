@@ -4,7 +4,7 @@ from datetime import timedelta
 import datetime
 import string
 
-data_to_generate = 10 # 16100
+data_to_generate = 100 # 16100
 
 fecha = "01-01-1980"
 # fecha = "01-01-1980 18:00:20"
@@ -25,7 +25,6 @@ for x in range (data_to_generate):
 import numpy as np
 temperaturas = np.random.randint(6,55,data_to_generate)
 
-print(temperaturas)
 cantidad_temperaturas = len (temperaturas)
 
 def generated_temperatures ():
@@ -42,7 +41,7 @@ def generated_temperatures ():
 
         ls_diccionario.append(diccionario_temp)
 
-    # return ls_diccionario
-    return print(ls_diccionario)
+    return ls_diccionario
+    # return print(ls_diccionario)
 
 generated_temperatures()
