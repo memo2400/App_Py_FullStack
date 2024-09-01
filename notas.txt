@@ -292,3 +292,25 @@ colors
 TUVE UN ERROR QUE PARECIA BRUTAL DEBIDO A QUE CUANDO 
 ACTUALIZE LA APP por que el internet estaba desconectado y por eso, no pudo 
 instaar las nuevas paqueterias he hizo que el entorno virtual casi muriese.
+
+
+##############################
+
+despliegue en reflex
+https://reflex.dev/docs/hosting/deploy-quick-start/#see-it-in-action
+
+
+$ reflex login
+para loguear, con cuenta google
+
+
+$ reflex deploy
+para el despliegue, doy en y de yes
+
+
+para la region use canada
+yyz
+
+
+el link sera 
+ https://tower.reflex.run
