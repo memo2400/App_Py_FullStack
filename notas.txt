@@ -31,6 +31,9 @@ para los requeriomientos usamos
 pip install -r requirements.txt
 
 
+para guardar los requerimientos
+$ pip freeze > requirements.txt
+
 vuelvo a dar en comando
 reflex run
 
