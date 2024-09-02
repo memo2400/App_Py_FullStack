@@ -8,7 +8,7 @@ from ..data import data_analysis
 
 from ..data.data_analysis import ls_dict_changed
 from Sitio_full_py.data import data_analysis
-from ..data.random_data import generated_temperatures
+from ..data.random_data import generated_temperatures_years
 
 """Se genera grafica"""
 import pandas as pd
@@ -41,7 +41,8 @@ data03 = data_analysis.data_procesing_setosa()
 data04 = data_analysis.data_procesing_versicolor()
 data05 = data_analysis.data_procesing_virginica()
 
-data06 = generated_temperatures()
+data06 = generated_temperatures_years()
+data07 = [{'x': 0, 'y': 41}, {'x': 1, 'y': 49}]
 
 def scatter_simple():
     
@@ -87,11 +88,10 @@ def scatter_temperature():
         ),
         rx.recharts.x_axis(
             data_key="x",                                       # poner el header necesario
-            type_="category",
+            type_="number",
             ),
         rx.recharts.y_axis(
-            data_key="y", 
-            type_="number"
+            data_key="y"
         ),                       # poner el header necesario
         rx.recharts.cartesian_grid(stroke_dasharray="3 3"),     # grid
         rx.recharts.legend(),                                   # legenda
