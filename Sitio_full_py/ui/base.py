@@ -55,13 +55,14 @@ def base_page(child: rx.Component, hide_navbar =False, *args, **kwargs) -> rx.Co
         ),
 
         rx.color_mode.button(position="button-left"),
-        rx.logo(),
+        # rx.logo(),
         
         # Baja el combo donde incia la pagina
         # padding="10em",
         
         id = "my_base_container", # habia usado name en lugar de id
         # text_align="center" # no funciono
+
     )
 
 
