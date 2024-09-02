@@ -25,6 +25,9 @@ def contact_entry_list_item(contac: model.ContactEntryModel):
         rx.text(         
             contac.message,
         ),
+        rx.text(         
+            contac.email,
+        ),
         padding='1em',
     )
 
@@ -75,7 +78,7 @@ def contact_page() -> rx.Component:
     my_child_contact = rx.vstack(
             rx.heading("Contact us | 联系我们", size="8"),
 
-            rx.text(state.ContactState.time_delay),
+            # rx.text(state.ContactState.time_delay),
 
             # agrego condicional (despues de cambio True , default false), ambos deben ser texto o objeto
             rx.cond(state.ContactState.did_sumitted, state.ContactState.thank_you, state.ContactState.before_submit),
